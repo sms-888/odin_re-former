@@ -1,4 +1,5 @@
 # README
+This project is for building rails's form using html, form_tag, then form_with
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
