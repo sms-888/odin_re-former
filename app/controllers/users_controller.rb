@@ -14,6 +14,25 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.find(params[:id])
+    end
+    
+    def edit
+        @user = User.find(params[:id])
+        #render :edit
+    end
+
+    def update
+        @update = User.find(params[:id])
+
+        if @user.update(user_params)
+            redirect_to @user
+        else
+            render :edit, :unprocessable_entity
+        end
+    end
+
 private
     def user_params
         params.require(:user).permit(:username, :email, :password)
