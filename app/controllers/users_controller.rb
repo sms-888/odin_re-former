@@ -24,12 +24,12 @@ class UsersController < ApplicationController
     end
 
     def update
-        @update = User.find(params[:id])
+        @user = User.find(params[:id])
 
         if @user.update(user_params)
             redirect_to @user
         else
-            render :edit, :unprocessable_entity
+            render :edit, status: :unprocessable_entity
         end
     end
 
